@@ -1,0 +1,244 @@
+@charset "utf-8";
+@import "reset";
+
+/* all - font-family: 'Noto Sans KR' */
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100;300;400;500;700;900&display=swap');
+/* table - font-family: 'Spoqa Han Sans' */
+@import url('https://spoqa.github.io/spoqa-han-sans/css/SpoqaHanSans-kr.css');
+// @import url(//spoqa.github.io/spoqa-han-sans/css/SpoqaHanSans-kr.css);
+
+/* footer - logo font-family: 'Poppins' */
+@import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
+
+$aColor : #222;
+
+/* skipNav */
+#skipNav {
+    position:absolute; top: -1000px; left:0; z-index:9999; width: 100%; height: 80px; background: $aColor; text-align: center;
+    a {
+        position: fixed;
+        display: block;
+        width: 100%;
+        left:50%;
+        transform: translateX(-50%);
+        font: bold 16px/40px 'Noto Sans KR'; color: #fff;
+        background: $aColor;
+        
+        &:hover, &:focus, &:active {top: 0;}
+    }
+}
+
+/* header */
+#sub_header {
+    .inner {
+        position: relative;
+        width: 1180px; margin: 0 auto;
+        &::after {content: ''; display: block; clear: both;}
+        h1 {
+            float: left; text-align: center; margin: 24px 20px 0 0; font-size: 0;
+            a {
+                display: inline-block; font: bold 30px/1 'Noto Sans KR'; color:$aColor; letter-spacing: 1px;
+                span {display: block; font: 12px/1 'arial'; color:$aColor; letter-spacing: 1px;}
+            }
+            
+        }
+        .menuWeb{
+            float: left;
+            #gnb {
+                &::after {content: ''; display: block; clear: both;}
+                li {
+                    position: relative; float: left; width: calc(100%/6); padding: 10px 30px;
+                    a {
+                        display: block; width: 100%; height: 100%; font: bold 14px/70px 'arial'; color: $aColor; text-align: center;
+                    }
+                    &:hover a {
+                        color: #d60035;
+                            &::after {content:''; position:absolute; left: 0; bottom:-10px; width:100%; height:10px; background:#d60035; z-index: 2;}
+                    }
+                }
+                
+            }
+        }
+       
+        #util {
+            position: absolute; top: 50%; transform: translateY(-50%); right: 0;
+            li {
+                float:left; margin: 0 10px;
+                &:last-of-type {margin: 0 0 0 10px;}
+                a {
+                    font: 14px/70px 'arial'; color: $aColor; letter-spacing: 1px;
+                    svg {font-size: 20px};
+                }
+            }
+        }
+    }
+    .bar {position: absolute; height: 10px; bottom: -10px; left: 0px; right: 0px; background: #000;}
+}
+
+/* section */
+#section {
+    width: 100%; padding: 50px 0 100px;
+    .inner {
+        width: 1180px; margin: 0 auto;
+        h1 {font: bold 36px/1 'Noto Sans KR'; color: #0c1a31; padding: 50px 0; margin-left: 30px; text-align: center;}
+
+        .box_menu {
+            width: 1000px; margin: 0 auto;
+            &::after {content: ''; display: block; clear: both;}
+            article {
+                float: left; width: calc(100% / 3); background: #eaeaea; margin:0px 0 50px; text-align: center;
+                a { display: block; padding: 15px 0;
+                    font: bold 14px/1 'Noto Sans KR'; color:#0c1a31; width: 100%; height: 100%; 
+                    &:hover {
+                        background: #0c1a31; width: 100%; height: 100%; color :#fff;
+                    }
+                    
+                }
+            }
+        }
+
+        .pagination {
+            width: 100%; text-align: center; margin-top: 30px;
+
+            &::after {content: ''; display: block; clear: both;}
+            .prev {
+                font-size: 14px; color: #555;
+            }
+            .next {
+                font-size: 14px; color: #555;
+            }
+
+            .numbers {
+                display: inline-block; font-size: 0;
+                a {
+                    display: inline-block;
+                    width: 30px; height: 30px;
+                    font: 11px/30px 'arial'; color: #666; text-align: center; margin: 0 5px;
+                    &:hover {
+                        background: #19191a;
+                        color: #fff;
+                    }
+                }
+            }
+        } //pagination
+    }
+}
+
+/* footer */
+#sub_footer {
+    .upper { position: relative; padding: 60px 40px;
+        background: #19191a; color: #fff;
+        .inner {
+            width: 1180px; margin: 0 auto;
+
+            &::after {content: ''; display: block; clear: both;}
+            article {
+                float: left; width: calc(100% / 3);
+                h2 {
+                    font: 500 18px/30px 'Noto Sans KR';
+                    margin-bottom: 20px;
+                }
+                h2.logo {
+                    font: 24px/1 'Poppins';
+                    margin-bottom: 20px;
+                }
+                div {
+                    margin-bottom: 15px;
+                    p {font: normal 13px/30px 'Noto Sans KR'; color: #929191;}
+                }
+                
+                ul {
+                    li {
+                        float: left; margin-right: 30px;
+                        a { 
+                            svg {color: #929191; font-size: 25px; transition: all 0.5s;}
+                            &:hover svg {animation: bounce 1.5s ease;}
+                        }
+                    }
+                }
+                &:last-of-type {
+                    p {
+                        margin-bottom: 10px;
+                        a {
+                            position: relative; display: inline-block; font: normal 13px/30px 'Noto Sans KR'; color: #929191; letter-spacing: 1px;
+                            
+                            &:hover {color: #fff;}
+                            &::after {content: ''; display: block; position: absolute; width: 100%; left: 0px;  bottom: 0; width: 100%; height:1px; background: #929191;}
+                            svg {
+                                margin-left: 10px; 
+                            }
+        
+                        }
+                        &:last-of-type {margin-bottom: 0;}
+                    }
+                }
+            } //article
+        }
+    }
+    .lower { position: relative; width: 100%;
+        background: #000000;
+        .inner {
+            width: 1180px; margin: 0 auto; padding: 15px 0; text-align: center;
+            p {font:11px/1 'Noto Sans KR'; color: #929191;}
+        }
+    }
+}
+
+/* animation */
+@keyframes bounce {
+    0% {transform: scale(1.1);}
+    10% {transform: scale(1.0);}
+    20% {transform: scale(1.1);}
+    80% {transform: scale(1.1);}
+    90% {transform: scale(1.0);}
+    100% {transform: scale(1.1);}    
+}
+
+/*---------------------------------------- tablet  ----------------------------------------*/
+@media screen and (max-width:1179px){
+    /* header */
+    #sub_header {
+        .inner {
+            width: 100%;
+        }
+    }
+
+    /* section */
+    #section {
+        .inner {
+            width: 100%;
+
+            .box_menu {
+                width: 1000px; margin: 0 auto;
+                &::after {content: ''; display: block; clear: both;}
+                article {
+                    float: left; width: calc(100% / 3); background: #eaeaea; margin:0px 0 50px; text-align: center;
+                    a { display: block; padding: 15px 0;
+                        font: bold 14px/1 'Noto Sans KR'; color:#0c1a31; width: 100%; height: 100%; 
+                        &:hover {
+                            background: #0c1a31; width: 100%; height: 100%; color :#fff;
+                        }
+                        
+                    }
+                }
+            }
+        }
+    }
+    
+    /* footer */
+    #sub_footer {
+        .upper {
+            .inner {
+                width: 100%;
+            }
+        }
+        .lower {
+            .inner {
+                width: 100%;
+            }
+        }
+    }
+}
+
+/*---------------------------------------- mobile  ----------------------------------------*/
+@media screen and (max-width:539px){}
