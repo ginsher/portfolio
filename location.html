@@ -12,7 +12,9 @@
     <link rel="stylesheet" href="css/style.css">
     <script src="js/jquery-2.1.1.min.js"></script>
     <script src="js/jquery.easing.1.3.js"></script>
+    <script type="text/javascript" src="//dapi.kakao.com/v2/maps/sdk.js?appkey=f50c6075b816de5dc656db0e02a87d52"></script>
     <script defer src="js/custom.js"></script>
+    <script defer src="js/location.js"></script>
 </head>
 <body>
 
@@ -106,17 +108,20 @@
     <section id="section" class="community">
         <div class="inner">
             <h1>LOCATION</h1>
-            <div class="box_menu">
-                <article>
-                    <a href="#">자료</a>
-                </article>
-                <article>
-                    <a href="#">사업보고서</a>
-                </article>
-                <article>
-                    <a href="#">Report</a>
-                </article>
-            </div>
+
+            <ul class="traffic">
+                <li><a href="#">교통정보 보기</a></li>
+                <li class="on"><a href="#">교통정보 끄기</a></li>
+            </ul>
+       
+            <ul class="branch">
+                <li data-index="0"><a href="#">본점</a></li>
+                <li data-index="1"><a href="#">지점1</a></li>
+                <li data-index="2"><a href="#">지점2</a></li>
+            </ul>
+
+            <div id="map"></div>
+            
             <div class="pagination">
                 <a href="#" class="prev">
                     <i class="fas fa-arrow-left"></i>

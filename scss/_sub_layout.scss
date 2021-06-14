@@ -51,10 +51,10 @@ $aColor : #222;
                     a {
                         display: block; width: 100%; height: 100%; font: bold 14px/70px 'arial'; color: $aColor; text-align: center;
                     }
-                    &:hover a {
-                        color: #d60035;
-                            &::after {content:''; position:absolute; left: 0; bottom:-10px; width:100%; height:10px; background:#d60035; z-index: 2;}
-                    }
+                    // &:hover a {
+                    //     color: #d60035;
+                    //         &::after {content:''; position:absolute; left: 0; bottom:-10px; width:100%; height:10px; background:#d60035; z-index: 2;}
+                    // }
                 }
                 
             }

@@ -128,17 +128,6 @@ input, a, button {
         font: bold 14px/70px 'arial';
         color: #222;
         text-align: center; }
-      #sub_header .inner .menuWeb #gnb li:hover a {
-        color: #d60035; }
-        #sub_header .inner .menuWeb #gnb li:hover a::after {
-          content: '';
-          position: absolute;
-          left: 0;
-          bottom: -10px;
-          width: 100%;
-          height: 10px;
-          background: #d60035;
-          z-index: 2; }
   #sub_header .inner #util {
     position: absolute;
     top: 50%;
@@ -760,6 +749,70 @@ input, a, button {
       #vidGallery article .con span {
         font: 12px/1 "arial";
         color: orange; }
+
+* {
+  margin: 0px;
+  padding: 0px;
+  box-sizing: border-box; }
+
+ol, ul, li {
+  list-style: none; }
+
+a {
+  text-decoration: none; }
+
+table, td, th {
+  border-collapse: collapse; }
+
+fieldset {
+  border: none; }
+
+input, a, button {
+  outline: 1; }
+
+.hidden {
+  position: absolute;
+  top: -9999px;
+  opacity: 0; }
+
+#map {
+  width: 100%;
+  height: 500px;
+  background: #000; }
+
+.traffic {
+  float: left;
+  margin-top: 20px; }
+  .traffic li {
+    float: left;
+    margin-right: 10px; }
+    .traffic li a {
+      display: block;
+      width: 200px;
+      height: 40px;
+      background: #555;
+      font: bold 12px/40px 'arial';
+      color: #fff;
+      text-align: center; }
+    .traffic li.on a {
+      background: #fff;
+      color: #333;
+      border: 1px solid #333; }
+
+.branch {
+  float: right;
+  margin-top: 20px; }
+  .branch li {
+    float: left;
+    margin-right: 10px; }
+    .branch li a {
+      display: block;
+      width: 200px;
+      height: 40px;
+      background: #555;
+      font: bold 12px/40px 'arial';
+      color: #fff;
+      text-align: center; }
 
 /* all - font-family: 'Noto Sans KR' */
 /* sub article - h1 font-family: 'Manrope' */
