@@ -782,7 +782,7 @@ input, a, button {
 
 .traffic {
   float: left;
-  margin-top: 20px; }
+  margin-bottom: 20px; }
   .traffic li {
     float: left;
     margin-right: 10px; }
@@ -801,7 +801,7 @@ input, a, button {
 
 .branch {
   float: right;
-  margin-top: 20px; }
+  margin-bottom: 20px; }
   .branch li {
     float: left;
     margin-right: 10px; }
