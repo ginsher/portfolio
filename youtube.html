@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>sub_layout</title>
+    <title>Youtube</title>
 
     <!-- fontawesome(SVG) -->
     <script src="https://kit.fontawesome.com/645f5ebcf1.js" crossorigin="anonymous"></script>
@@ -13,6 +13,15 @@
     <script src="js/jquery-2.1.1.min.js"></script>
     <script src="js/jquery.easing.1.3.js"></script>
     <script defer src="js/custom.js"></script>
+    <script defer src="js/youtube.js"></script>
+    <script>
+        $(document).ready(function(){
+            $("#vidGallery").myYoutube({
+                key : "AIzaSyA7eddsOCe0xWAQtHGn1_yN8pmmMYH53ok",
+                playList : "PLCLKoygJfCLo08VXJ3EHeVdTl_TSkVII8",
+            });  
+        })
+    </script>
 </head>
 <body>
 
@@ -106,7 +115,10 @@
     <section id="section" class="community">
         <div class="inner">
             <h1>YOUTUBE</h1>
-            
+            <section id="vidGallery">
+
+            </section>
+
             <div class="pagination">
                 <a href="#" class="prev">
                     <i class="fas fa-arrow-left"></i>
