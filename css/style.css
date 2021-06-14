@@ -567,37 +567,37 @@ input, a, button {
               border-radius: 15px;
               font: bold 13px/30px 'Noto Sans KR';
               color: #fff; }
-    #section .inner .pagination {
-      width: 100%;
-      text-align: center;
-      margin-top: 30px; }
-      #section .inner .pagination::after {
-        content: '';
-        display: block;
-        clear: both; }
-      #section .inner .pagination .prev {
-        font-size: 14px;
-        color: #555; }
-      #section .inner .pagination .next {
-        font-size: 14px;
-        color: #555; }
-      #section .inner .pagination .numbers {
+  #section .pagination {
+    width: 100%;
+    text-align: center;
+    margin-top: 30px; }
+    #section .pagination::after {
+      content: '';
+      display: block;
+      clear: both; }
+    #section .pagination .prev {
+      font-size: 14px;
+      color: #555; }
+    #section .pagination .next {
+      font-size: 14px;
+      color: #555; }
+    #section .pagination .numbers {
+      display: inline-block;
+      font-size: 0; }
+      #section .pagination .numbers a {
         display: inline-block;
-        font-size: 0; }
-        #section .inner .pagination .numbers a {
-          display: inline-block;
-          width: 30px;
-          height: 30px;
-          font: 11px/30px 'arial';
-          color: #666;
-          text-align: center;
-          margin: 0 5px; }
-          #section .inner .pagination .numbers a:hover {
-            background: #19191a;
-            color: #fff; }
-          #section .inner .pagination .numbers a.on {
-            background: #19191a;
-            color: #fff; }
+        width: 30px;
+        height: 30px;
+        font: 11px/30px 'arial';
+        color: #666;
+        text-align: center;
+        margin: 0 5px; }
+        #section .pagination .numbers a:hover {
+          background: #19191a;
+          color: #fff; }
+        #section .pagination .numbers a.on {
+          background: #19191a;
+          color: #fff; }
 
 /* footer */
 #sub_footer .upper {
@@ -688,6 +688,154 @@ input, a, button {
     transform: scale(1.1); } }
 /*---------------------------------------- tablet  ----------------------------------------*/
 /*---------------------------------------- mobile  ----------------------------------------*/
+* {
+  margin: 0px;
+  padding: 0px;
+  box-sizing: border-box; }
+
+ol, ul, li {
+  list-style: none; }
+
+a {
+  text-decoration: none; }
+
+table, td, th {
+  border-collapse: collapse; }
+
+fieldset {
+  border: none; }
+
+input, a, button {
+  outline: 1; }
+
+.hidden {
+  position: absolute;
+  top: -9999px;
+  opacity: 0; }
+
+.loading {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  width: 80px;
+  height: 80px;
+  transform: translate(-50%, -50%);
+  transition: 1s;
+  opacity: 0; }
+  .loading.on {
+    opacity: 1; }
+
+.content {
+  width: 100%;
+  padding: 100px 0px 150px;
+  box-sizing: border-box; }
+  .content .inner {
+    width: 1180px;
+    margin: 0px auto; }
+    .content .inner > h1 {
+      font: bold 50px/1 "arial";
+      color: #333;
+      margin-bottom: 50px;
+      cursor: pointer; }
+    .content .inner #search {
+      margin-bottom: 50px; }
+    .content .inner #gallery {
+      opacity: 0;
+      transform: translateY(100px);
+      transition: 1s; }
+      .content .inner #gallery.on {
+        opacity: 1;
+        transform: translateY(0px); }
+      .content .inner #gallery ul {
+        width: 100%; }
+        .content .inner #gallery ul::after {
+          content: "";
+          display: block;
+          clear: both; }
+        .content .inner #gallery ul li {
+          float: left;
+          padding: 10px;
+          height: 300px;
+          box-sizing: border-box;
+          width: 33.333%; }
+          .content .inner #gallery ul li.item-sizer {
+            width: 33.333%;
+            opacity: 0; }
+          .content .inner #gallery ul li:nth-of-type(2) {
+            width: 66.666%; }
+          .content .inner #gallery ul li:nth-of-type(4) {
+            height: 600px; }
+          .content .inner #gallery ul li:nth-of-type(7) {
+            width: 66.666%; }
+          .content .inner #gallery ul li .inner {
+            width: 100%;
+            height: 100%;
+            background: #000;
+            position: relative;
+            overflow: hidden; }
+            .content .inner #gallery ul li .inner > a {
+              display: block;
+              width: 100%;
+              height: 100%;
+              position: absolute;
+              top: 0px;
+              left: 0px;
+              opacity: 1;
+              transition: 0.5s; }
+              .content .inner #gallery ul li .inner > a > img {
+                width: 100%;
+                height: 100%;
+                object-fit: cover; }
+            .content .inner #gallery ul li .inner p {
+              position: absolute;
+              top: -120px;
+              opacity: 0;
+              left: 20px;
+              font: bold 14px/1 "arial";
+              color: #fff;
+              transition: 0.5s; }
+            .content .inner #gallery ul li .inner .profile {
+              position: absolute;
+              bottom: -120px;
+              left: 20px;
+              opacity: 0;
+              transition: 0.5s 0.2s;
+              cursor: pointer; }
+              .content .inner #gallery ul li .inner .profile img {
+                border-radius: 50%; }
+              .content .inner #gallery ul li .inner .profile span {
+                font: 14px/1 "arial";
+                color: #fff;
+                margin-left: 15px;
+                opacity: 0.7;
+                position: relative;
+                top: -18px; }
+            .content .inner #gallery ul li .inner:hover > a {
+              opacity: 0.4; }
+            .content .inner #gallery ul li .inner:hover p {
+              top: 20px;
+              opacity: 1; }
+            .content .inner #gallery ul li .inner:hover .profile {
+              bottom: 20px;
+              opacity: 1; }
+
+@media screen and (max-width: 1179px) {
+  .content {
+    padding: 100px 40px; }
+    .content .inner {
+      width: 100%; }
+      .content .inner #search {
+        margin-bottom: 50px; }
+      .content .inner #gallery ul li {
+        width: 50%; }
+        .content .inner #gallery ul li.item-sizer {
+          width: 50%; }
+        .content .inner #gallery ul li:nth-of-type(2) {
+          width: 100%; }
+        .content .inner #gallery ul li:nth-of-type(6) {
+          width: 100%; }
+        .content .inner #gallery ul li:nth-of-type(7) {
+          width: 50%; } }
 * {
   margin: 0px;
   padding: 0px;
