@@ -52,6 +52,7 @@ $aColor : #222;
             top: 0;
             left: 0;
             font-size: 0;
+
             /* 1depth */
             ul#gnb {
                 //background: pink;
@@ -84,6 +85,24 @@ $aColor : #222;
                         top: 80px; 
                         display: none;          
                         border: 1px solid red;
+
+                        /* 2depth */
+                        > ul#lnb {
+                            position: absolute; top: 50px;
+                            z-index: 3;
+
+                            > li{
+                                a{
+                                    display:block; width:200px; height:50px; 
+                                    font:12px/50px 'arial'; color:#bbb; 
+                                    text-align:center; background:#777; transition:0.5s; 
+        
+                                    &:hover{
+                                        background:#555; color:orange; 
+                                    }
+                                }
+                            }
+                        }
                     }
 
                     &:nth-of-type(2) {
