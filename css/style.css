@@ -688,6 +688,68 @@ input, a, button {
     transform: scale(1.1); } }
 /*---------------------------------------- tablet  ----------------------------------------*/
 /*---------------------------------------- mobile  ----------------------------------------*/
+.join .sub_visual {
+  background: violet;
+  height: 200px; }
+.join h2 {
+  font: bold 26px/1 "arial";
+  color: #444;
+  margin-bottom: 20px;
+  margin-top: 50px; }
+.join textarea#terms {
+  width: 100%;
+  height: 120px;
+  background: rgba(0, 0, 0, 0.3);
+  padding: 20px;
+  box-sizing: border-box;
+  font: 12px/1.6 'arial';
+  color: #444; }
+.join table {
+  width: 100%;
+  border-collapse: collapse;
+  border-bottom: 2px solid #111; }
+  .join table tr {
+    border-bottom: 1px solid #ddd; }
+    .join table tr:first-of-type {
+      border-top: 2px solid #111; }
+    .join table tr:last-of-type th {
+      text-align: center; }
+  .join table th {
+    width: 20%;
+    border-right: 1px solid #ddd;
+    padding: 20px 40px;
+    text-align: left; }
+  .join table td {
+    padding: 20px 40px; }
+.join input[type=text], .join .join input[type=password], .join .join select {
+  width: 30%;
+  height: 30px;
+  border: 1px solid #aaa;
+  background: rgba(0, 0, 0, 0.03);
+  padding: 5px 10px;
+  box-sizing: border-box; }
+.join textarea#comments {
+  width: 100%;
+  height: 120px;
+  background: rgba(0, 0, 0, 0.03);
+  padding: 20px;
+  box-sizing: border-box;
+  font-size: 16px;
+  line-height: 1.6;
+  font-family: 'arial'; }
+.join label {
+  margin-right: 10px; }
+.join input[type=reset], .join .join input[type=submit] {
+  width: 120px;
+  height: 40px;
+  font: bold 12px/40px 'arial';
+  color: #666;
+  text-align: center;
+  border: 1px solid #777;
+  border-radius: 20px;
+  cursor: pointer;
+  background: #fff; }
+
 * {
   margin: 0px;
   padding: 0px;
