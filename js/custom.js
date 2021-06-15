@@ -1,5 +1,5 @@
 $(document).ready(function(){
-    var $header = $("#sub_header");
+    var $header = $("#header",);
     var $gnb_li = $("#gnb>li");
 
     $gnb_li.on("mouseenter focusin",function(){
@@ -21,7 +21,7 @@ $(document).ready(function(){
 
         //bgGnb의 모양은 마우스를 올릴때마다 실시간으로 계속 변경
         $(".bgGnb").css({
-            width:"100%", height:ht, position:"absolute",
+            width: "100%", height:ht, position:"absolute",
             top:posY, left:0, backgroundColor:bg,
         })
         

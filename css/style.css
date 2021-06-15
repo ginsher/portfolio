@@ -87,53 +87,106 @@ input, a, button {
     #skipNav a:hover, #skipNav a:focus, #skipNav a:active {
       top: 0; }
 
-#sub_header {
-  width: 100%;
+/* header */
+#sub_header::after {
+  content: '';
+  display: block;
+  clear: both; }
+#sub_header .inner {
   position: relative;
-  z-index: 2; }
-  #sub_header .inner {
-    width: 1180px;
-    margin: 0px auto;
-    position: relative; }
-    #sub_header .inner::after {
-      content: "";
+  width: 1180px;
+  margin: 0 auto; }
+  #sub_header .inner .logo {
+    width: 100%;
+    position: absolute;
+    left: 0; }
+    #sub_header .inner .logo::after {
       display: block;
-      clear: both; }
-    #sub_header .inner h1 {
-      float: left;
-      text-align: center;
-      margin: 24px 20px 0 0;
-      font-size: 0; }
-    #sub_header .inner #gnb {
-      float: right;
-      border: 1px solid aqua; }
-      #sub_header .inner #gnb > li {
-        float: left; }
-        #sub_header .inner #gnb > li > a {
+      content: '';
+      width: 100%;
+      height: 10px;
+      background: black;
+      position: absolute;
+      bottom: -16px; }
+    #sub_header .inner .logo a {
+      display: inline-block; }
+      #sub_header .inner .logo a > h1 {
+        color: #222; }
+      #sub_header .inner .logo a > span {
+        bottom: 0;
+        color: #222; }
+  #sub_header .inner .menuWeb {
+    text-align: center;
+    width: 100%;
+    top: 0;
+    left: 0;
+    font-size: 0;
+    /* 1depth */ }
+    #sub_header .inner .menuWeb ul#gnb {
+      padding-left: 80px;
+      display: inline-block; }
+      #sub_header .inner .menuWeb ul#gnb::after {
+        content: '';
+        display: block;
+        clear: both; }
+      #sub_header .inner .menuWeb ul#gnb > li {
+        position: relative;
+        float: left;
+        width: calc(100% / 6);
+        height: 80px;
+        padding: 10px 30px; }
+        #sub_header .inner .menuWeb ul#gnb > li > a {
           display: block;
-          width: 150px;
-          height: 60px;
-          font: bold 14px/60px "arial";
-          color: #777;
+          width: 100%;
+          height: 100%;
+          font: bold 14px/1 'arial';
+          color: #222;
           text-align: center;
-          transition: 0.5s; }
-          #sub_header .inner #gnb > li > a:hover, #sub_header .inner #gnb > li > a.on {
-            background: #777;
-            color: #fff; }
-        #sub_header .inner #gnb > li .sub {
+          line-height: 40px; }
+          #sub_header .inner .menuWeb ul#gnb > li > a::before {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 0;
+            height: 10px;
+            background-color: #d60035;
+            transition: width .8s; }
+        #sub_header .inner .menuWeb ul#gnb > li:hover > a, #sub_header .inner .menuWeb ul#gnb > li.on > a {
+          color: #d60035; }
+        #sub_header .inner .menuWeb ul#gnb > li:hover a::before, #sub_header .inner .menuWeb ul#gnb > li.on a::before {
+          width: 100%; }
+        #sub_header .inner .menuWeb ul#gnb > li .sub {
           position: absolute;
           width: 1180px;
-          height: 300px;
-          background: #777;
+          height: 200px;
+          background: #f3f0f0;
           left: 50%;
-          margin-left: -590px;
-          top: 60px;
+          transform: translateX(-50%);
+          top: 80px;
           display: none;
           border: 1px solid red; }
-        #sub_header .inner #gnb > li:nth-of-type(2) .sub {
-          height: 200px; }
-        #sub_header .inner #gnb > li:nth-of-type(4) .sub {
-          height: 350px; }
+        #sub_header .inner .menuWeb ul#gnb > li:nth-of-type(2) .sub {
+          height: 250px; }
+        #sub_header .inner .menuWeb ul#gnb > li:nth-of-type(4) .sub {
+          height: 300px; }
+  #sub_header .inner #util {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-100%);
+    right: 0; }
+    #sub_header .inner #util li {
+      float: left;
+      margin: 0 10px; }
+      #sub_header .inner #util li:last-of-type {
+        margin: 0 0 0 10px; }
+      #sub_header .inner #util li a {
+        font: 12px/1 'arial';
+        color: #222;
+        letter-spacing: 1px; }
+        #sub_header .inner #util li a svg {
+          font-size: 20px; }
 
 /* section */
 #section {
@@ -654,7 +707,7 @@ input, a, button {
 .department .division {
   width: 100%;
   height: 600px;
-  background: url(../img/bgDivision.jpg) no-repeat center/contain; }
+  background: url(img/bgDivision.jpg) no-repeat center/contain; }
 
 .department .division .div_tree {
   position: absolute;
@@ -795,91 +848,6 @@ input, a, button {
     #skipNav a:hover, #skipNav a:focus, #skipNav a:active {
       top: 0; }
 
-/* header */
-#sub_header .inner {
-  position: relative;
-  width: 1180px;
-  margin: 0 auto;
-  text-align: center; }
-  #sub_header .inner::after {
-    content: '';
-    display: block;
-    clear: both; }
-  #sub_header .inner h1 {
-    background: orange;
-    width: 180px;
-    position: absolute;
-    top: 50%;
-    transform: translateY(-50%);
-    left: 0;
-    text-align: center; }
-    #sub_header .inner h1 a {
-      display: inline-block;
-      font: bold 30px/1 'Noto Sans KR';
-      color: #222;
-      letter-spacing: 1px; }
-      #sub_header .inner h1 a span {
-        display: block;
-        font: 12px/1 'arial';
-        color: #222;
-        letter-spacing: 1px; }
-  #sub_header .inner .menuWeb #gnb {
-    background: pink;
-    display: inline-block; }
-    #sub_header .inner .menuWeb #gnb::after {
-      content: '';
-      display: block;
-      clear: both; }
-    #sub_header .inner .menuWeb #gnb li {
-      position: relative;
-      float: left;
-      width: calc(100% / 6);
-      height: 100px;
-      padding: 10px 30px; }
-      #sub_header .inner .menuWeb #gnb li a {
-        background: orangered;
-        display: block;
-        width: 100%;
-        height: 100%;
-        font: bold 14px/1 'arial';
-        color: #222;
-        text-align: center; }
-      #sub_header .inner .menuWeb #gnb li:hover a {
-        color: #d60035; }
-        #sub_header .inner .menuWeb #gnb li:hover a::after {
-          content: '';
-          position: absolute;
-          left: 0;
-          bottom: 0px;
-          width: 100%;
-          height: 10px;
-          background: #d60035;
-          z-index: 2; }
-  #sub_header .inner #util {
-    background: skyblue;
-    position: absolute;
-    top: 50%;
-    transform: translateY(-50%);
-    right: 0; }
-    #sub_header .inner #util li {
-      float: left;
-      margin: 0 10px; }
-      #sub_header .inner #util li:last-of-type {
-        margin: 0 0 0 10px; }
-      #sub_header .inner #util li a {
-        font: 12px/1 'arial';
-        color: #222;
-        letter-spacing: 1px; }
-        #sub_header .inner #util li a svg {
-          font-size: 20px; }
-#sub_header .bar {
-  position: absolute;
-  height: 10px;
-  bottom: 0px;
-  left: 0px;
-  right: 0px;
-  background: #000; }
-
 /* section */
 #section {
   width: 100%;
@@ -994,79 +962,6 @@ input, a, button {
         #section .pagination .numbers a.on {
           background: #19191a;
           color: #fff; }
-
-/* footer */
-#sub_footer .upper {
-  position: relative;
-  padding: 60px 40px;
-  background: #19191a;
-  color: #fff; }
-  #sub_footer .upper .inner {
-    width: 1180px;
-    margin: 0 auto; }
-    #sub_footer .upper .inner::after {
-      content: '';
-      display: block;
-      clear: both; }
-    #sub_footer .upper .inner article {
-      float: left;
-      width: calc(100% / 3); }
-      #sub_footer .upper .inner article h2 {
-        font: 500 18px/30px 'Noto Sans KR';
-        margin-bottom: 20px; }
-      #sub_footer .upper .inner article h2.logo {
-        font: 24px/1 'Poppins';
-        margin-bottom: 20px; }
-      #sub_footer .upper .inner article div {
-        margin-bottom: 15px; }
-        #sub_footer .upper .inner article div p {
-          font: normal 13px/30px 'Noto Sans KR';
-          color: #929191; }
-      #sub_footer .upper .inner article ul li {
-        float: left;
-        margin-right: 30px; }
-        #sub_footer .upper .inner article ul li a svg {
-          color: #929191;
-          font-size: 25px;
-          transition: all 0.5s; }
-        #sub_footer .upper .inner article ul li a:hover svg {
-          animation: bounce 1.5s ease; }
-      #sub_footer .upper .inner article:last-of-type p {
-        margin-bottom: 10px; }
-        #sub_footer .upper .inner article:last-of-type p a {
-          position: relative;
-          display: inline-block;
-          font: normal 13px/30px 'Noto Sans KR';
-          color: #929191;
-          letter-spacing: 1px; }
-          #sub_footer .upper .inner article:last-of-type p a:hover {
-            color: #fff; }
-          #sub_footer .upper .inner article:last-of-type p a::after {
-            content: '';
-            display: block;
-            position: absolute;
-            width: 100%;
-            left: 0px;
-            bottom: 0;
-            width: 100%;
-            height: 1px;
-            background: #929191; }
-          #sub_footer .upper .inner article:last-of-type p a svg {
-            margin-left: 10px; }
-        #sub_footer .upper .inner article:last-of-type p:last-of-type {
-          margin-bottom: 0; }
-#sub_footer .lower {
-  position: relative;
-  width: 100%;
-  background: #000000; }
-  #sub_footer .lower .inner {
-    width: 1180px;
-    margin: 0 auto;
-    padding: 15px 0;
-    text-align: center; }
-    #sub_footer .lower .inner p {
-      font: 11px/1 'Noto Sans KR';
-      color: #929191; }
 
 /* animation */
 @keyframes bounce {
@@ -1445,90 +1340,105 @@ input, a, button {
       top: 0; }
 
 /* header */
+#header::after {
+  content: '';
+  display: block;
+  clear: both; }
 #header .inner {
   position: relative;
   width: 1180px;
   margin: 0 auto; }
-  #header .inner::after {
-    content: '';
-    display: block;
-    clear: both; }
-  #header .inner h1 {
-    float: left;
-    text-align: center;
-    margin: 24px 20px 0 0;
-    font-size: 0; }
-    #header .inner h1 a {
-      display: inline-block;
-      font: bold 30px/1 'Noto Sans KR';
-      color: #222;
-      letter-spacing: 1px; }
-      #header .inner h1 a span {
-        display: block;
-        font: 12px/1 'arial';
-        color: #222;
-        letter-spacing: 1px; }
-  #header .inner .menuWeb {
-    float: left; }
-    #header .inner .menuWeb #gnb::after {
-      content: '';
+  #header .inner .logo {
+    width: 100%;
+    position: absolute;
+    left: 0; }
+    #header .inner .logo::after {
       display: block;
-      clear: both; }
-    #header .inner .menuWeb #gnb > li {
-      position: relative;
-      float: left;
-      width: calc(100%/6);
-      padding: 10px 30px; }
-      #header .inner .menuWeb #gnb > li a {
+      content: '';
+      width: 100%;
+      height: 10px;
+      background: black;
+      position: absolute;
+      bottom: -16px; }
+    #header .inner .logo a {
+      display: inline-block; }
+      #header .inner .logo a > h1 {
+        color: #222; }
+      #header .inner .logo a > span {
+        bottom: 0;
+        color: #222; }
+  #header .inner .menuWeb {
+    text-align: center;
+    width: 100%;
+    top: 0;
+    left: 0;
+    font-size: 0;
+    /* 1depth */ }
+    #header .inner .menuWeb ul#gnb {
+      padding-left: 80px;
+      display: inline-block; }
+      #header .inner .menuWeb ul#gnb::after {
+        content: '';
         display: block;
-        width: 100%;
-        height: 100%;
-        font: bold 14px/70px 'arial';
-        color: #222;
-        text-align: center; }
-      > #header .inner .menuWeb #gnb > li:hover a {
-        color: #d60035; }
-        > > #header .inner .menuWeb #gnb > li:hover a::after {
-          content: '';
-          position: absolute;
-          left: 0;
-          bottom: -10px;
+        clear: both; }
+      #header .inner .menuWeb ul#gnb > li {
+        position: relative;
+        float: left;
+        width: calc(100% / 6);
+        height: 80px;
+        padding: 10px 30px; }
+        #header .inner .menuWeb ul#gnb > li > a {
+          display: block;
           width: 100%;
-          height: 10px;
-          background: #d60035;
-          z-index: 2; }
-      #header .inner .menuWeb #gnb > li #lnb div {
-        position: absolute;
-        left: -200px;
-        top: 100px;
-        box-shadow: -4px 0px 4px -4px black; }
-      #header .inner .menuWeb #gnb > li #lnb li {
-        width: 100%;
-        border-left: 1px solid #dadada; }
+          height: 100%;
+          font: bold 14px/1 'arial';
+          color: #222;
+          text-align: center;
+          line-height: 40px; }
+          #header .inner .menuWeb ul#gnb > li > a::before {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 0;
+            height: 10px;
+            background-color: #d60035;
+            transition: width .8s; }
+        #header .inner .menuWeb ul#gnb > li:hover > a, #header .inner .menuWeb ul#gnb > li.on > a {
+          color: #d60035; }
+        #header .inner .menuWeb ul#gnb > li:hover a::before, #header .inner .menuWeb ul#gnb > li.on a::before {
+          width: 100%; }
+        #header .inner .menuWeb ul#gnb > li .sub {
+          position: absolute;
+          width: 1180px;
+          height: 200px;
+          background: #f3f0f0;
+          left: 50%;
+          transform: translateX(-50%);
+          top: 80px;
+          display: none;
+          border: 1px solid red; }
+        #header .inner .menuWeb ul#gnb > li:nth-of-type(2) .sub {
+          height: 250px; }
+        #header .inner .menuWeb ul#gnb > li:nth-of-type(4) .sub {
+          height: 300px; }
   #header .inner #util {
-    float: right; }
+    position: absolute;
+    top: 50%;
+    transform: translateY(-100%);
+    right: 0; }
     #header .inner #util li {
       float: left;
       margin: 0 10px; }
       #header .inner #util li:last-of-type {
         margin: 0 0 0 10px; }
       #header .inner #util li a {
-        font: 14px/70px 'arial';
+        font: 12px/1 'arial';
         color: #222;
         letter-spacing: 1px; }
         #header .inner #util li a svg {
           font-size: 20px; }
-  #header .inner .btnCall {
-    display: none; }
-  #header .inner .menuMo {
-    display: none; }
-#header .bar {
-  position: absolute;
-  height: 10px;
-  bottom: -10px;
-  left: 0px;
-  right: 0px;
-  background: #000; }
 
 /* section */
 #section {
@@ -1561,8 +1471,7 @@ input, a, button {
       width: calc(100% / 3); }
       #footer .upper .inner article h2 {
         font: 500 18px/30px 'Noto Sans KR';
-        margin-bottom: 20px;
-        color: #ebebeb; }
+        margin-bottom: 20px; }
       #footer .upper .inner article h2.logo {
         font: 24px/1 'Poppins';
         margin-bottom: 20px; }

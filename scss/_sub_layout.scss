@@ -28,117 +28,88 @@ $aColor : #222;
     }
 }
 
-#sub_header {
-    width: 100%;  
-    position: relative;
-    z-index: 2;
-
+/* header */
+#header {
+    &::after {content: ''; display: block; clear: both;}
     .inner {
-        width: 1180px;
-        margin: 0px auto;
-        position: relative;
-
-        &::after {
-             content: "";
-             display: block;
-             clear: both;
+        position: relative; width: 1180px; margin: 0 auto;
+        
+        
+        .logo {
+            //background: green; 
+            width: 100%; position: absolute; left: 0;
+            &::after {display: block; content: ''; width: 100%; height: 10px; background: black; position: absolute; bottom: -16px;}
+            a {
+                display: inline-block;
+                > h1 {color: $aColor;}
+                > span {bottom: 0; color: $aColor;}
+            }
         }
 
-        h1 {
-            float: left; text-align: center; margin: 24px 20px 0 0; font-size: 0;
-        }
+        .menuWeb{
+            text-align: center;
+            width: 100%;
+            top: 0;
+            left: 0;
+            font-size: 0;
+            /* 1depth */
+            ul#gnb {
+                //background: pink;
+                padding-left: 80px;
+                display: inline-block; 
+                &::after {content: ''; display: block; clear: both;}
 
-        #gnb {
-            float: right;
-            border: 1px solid aqua;       
-
-            >li {
-                float: left;
-
-                >a {
-                    display: block;  
-                    width: 150px;  
-                    height: 60px;  
-                    font: bold 14px/60px "arial";  
-                    color: #777;
-                    text-align: center;   
-                    transition: 0.5s;
-
+                > li {
+                    position: relative; float: left; width: calc(100% / 6); height: 80px; padding: 10px 30px;
+                    
+                    > a {
+                        display: block; width: 100%; height: 100%; font: bold 14px/1 'arial'; color: $aColor; text-align: center; line-height: 40px;
+                        &::before {
+                            content: ''; position: absolute; bottom: 0; left: 50%; transform:translateX(-50%);
+                        width:0; height: 10px; background-color:#d60035; transition:width .8s;
+                        }
+                    }
                     &:hover, &.on {
-                        background: #777;  
-                        color: #fff;
+                        > a {color: #d60035;}
+                        a::before {width: 100%;}
+                    }
+
+                    .sub {
+                        position: absolute; 
+                        width: 1180px; 
+                        height: 200px;
+                        background: #f3f0f0;
+                        left: 50%;
+                        transform: translateX(-50%);
+                        top: 80px; 
+                        display: none;          
+                        border: 1px solid red;
+                    }
+
+                    &:nth-of-type(2) {
+                        .sub {height: 250px;}
+                    }
+                    &:nth-of-type(4) {
+                        .sub {height: 300px;}
                     }
                 }
-
-        .sub {
-            position: absolute; 
-            width: 1180px; 
-            height: 300px;
-            background: #777;
-            left: 50%;
-            margin-left: -590px;
-            top: 60px; 
-            display: none;
-            border: 1px solid red;                    
+            }
         }
-
-        &:nth-of-type(2) {
-            .sub {height: 200px;}
-        }
-        &:nth-of-type(4) {
-            .sub {height: 350px;}
-        }
-        }
+        
+        #util {
+            //background: skyblue;
+            position: absolute; top: 50%; transform: translateY(-100%); right: 0;
+            li {
+                float:left; margin: 0 10px;
+                &:last-of-type {margin: 0 0 0 10px;}
+                a {
+                    font: 12px/1 'arial'; color: $aColor; letter-spacing: 1px;
+                    svg {font-size: 20px};
+                }
+            }
         }
     }
 }
-
-// /* header */
-// #sub_header {
-//     .inner {
-//         position: relative;
-//         width: 1180px; margin: 0 auto;
-//         &::after {content: ''; display: block; clear: both;}
-//         h1 {
-//             float: left; text-align: center; margin: 24px 20px 0 0; font-size: 0;
-//             a {
-//                 display: inline-block; font: bold 30px/1 'Noto Sans KR'; color:$aColor; letter-spacing: 1px;
-//                 span {display: block; font: 12px/1 'arial'; color:$aColor; letter-spacing: 1px;}
-//             }
-            
-//         }
-//         .menuWeb{
-//             float: left;
-//             #gnb {
-//                 &::after {content: ''; display: block; clear: both;}
-//                 li {
-//                     position: relative; float: left; width: calc(100%/6); padding: 10px 30px;
-//                     a {
-//                         display: block; width: 100%; height: 100%; font: bold 14px/70px 'arial'; color: $aColor; text-align: center;
-//                     }
-//                     // &:hover a {
-//                     //     color: #d60035;
-//                     //         &::after {content:''; position:absolute; left: 0; bottom:-10px; width:100%; height:10px; background:#d60035; z-index: 2;}
-//                     // }
-//                 }
-                
-//             }
-//         }
-       
-//         #util {
-//             position: absolute; top: 50%; transform: translateY(-50%); right: 0;
-//             li {
-//                 float:left; margin: 0 10px;
-//                 &:last-of-type {margin: 0 0 0 10px;}
-//                 a {
-//                     font: 14px/70px 'arial'; color: $aColor; letter-spacing: 1px;
-//                     svg {font-size: 20px};
-//                 }
-//             }
-//         }
-//     }
-//     .bar {position: absolute; height: 10px; bottom: -10px; left: 0px; right: 0px; background: #000;}
-// }
 
 /* section */
 #section {
@@ -190,7 +161,7 @@ $aColor : #222;
 }
 
 /* footer */
-#sub_footer {
+#footer {
     .upper { position: relative; padding: 60px 40px;
         background: #19191a; color: #fff;
         .inner {
