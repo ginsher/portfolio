@@ -10,6 +10,7 @@
 @import url("https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100;300;400;500;700;900&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Manrope:wght@800&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@100&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Manrope&display=swap");
 @import url("https://spoqa.github.io/spoqa-han-sans/css/SpoqaHanSans-kr.css");
 @import url("https://fonts.googleapis.com/css2?family=Poppins&display=swap");
 * {
@@ -166,7 +167,24 @@ input, a, button {
           transform: translateX(-50%);
           top: 80px;
           display: none;
-          border: 1px solid red; }
+          border: 1px solid red;
+          /* 2depth */ }
+          #header .inner .menuWeb ul#gnb > li .sub > ul#lnb {
+            position: absolute;
+            top: 50px;
+            z-index: 3; }
+            #header .inner .menuWeb ul#gnb > li .sub > ul#lnb > li a {
+              display: block;
+              width: 200px;
+              height: 50px;
+              font: 12px/50px 'arial';
+              color: #bbb;
+              text-align: center;
+              background: #777;
+              transition: 0.5s; }
+              #header .inner .menuWeb ul#gnb > li .sub > ul#lnb > li a:hover {
+                background: #555;
+                color: orange; }
         #header .inner .menuWeb ul#gnb > li:nth-of-type(2) .sub {
           height: 250px; }
         #header .inner .menuWeb ul#gnb > li:nth-of-type(4) .sub {
@@ -195,11 +213,17 @@ input, a, button {
   #section .inner {
     width: 1180px;
     margin: 0 auto; }
-    #section .inner h1 {
-      font: bold 36px/1 'Noto Sans KR';
+    #section .inner span {
+      font: bold 14px/1 'Manrope';
       color: #0c1a31;
-      padding: 50px 0;
-      margin-left: 30px;
+      padding: 50px 0 10px;
+      text-align: center;
+      display: block;
+      letter-spacing: 2px; }
+    #section .inner h1 {
+      font: bold 36px/1 'Malgun Gothic';
+      color: #0c1a31;
+      padding: 0 0 50px;
       text-align: center; }
     #section .inner .box_menu {
       width: 1000px;
@@ -1315,6 +1339,7 @@ input, a, button {
 /* all - font-family: 'Noto Sans KR' */
 /* sub article - h1 font-family: 'Manrope' */
 /* sub article - h1 font-family: 'Montserrat' */
+/* sub title - h1 font-family: 'Manrope' */
 /* table - font-family: 'Spoqa Han Sans' */
 /* footer - logo font-family: 'Poppins' */
 /* skipNav */
@@ -1339,107 +1364,6 @@ input, a, button {
     #skipNav a:hover, #skipNav a:focus, #skipNav a:active {
       top: 0; }
 
-/* header */
-#header::after {
-  content: '';
-  display: block;
-  clear: both; }
-#header .inner {
-  position: relative;
-  width: 1180px;
-  margin: 0 auto; }
-  #header .inner .logo {
-    width: 100%;
-    position: absolute;
-    left: 0; }
-    #header .inner .logo::after {
-      display: block;
-      content: '';
-      width: 100%;
-      height: 10px;
-      background: black;
-      position: absolute;
-      bottom: -16px; }
-    #header .inner .logo a {
-      display: inline-block; }
-      #header .inner .logo a > h1 {
-        color: #222; }
-      #header .inner .logo a > span {
-        bottom: 0;
-        color: #222; }
-  #header .inner .menuWeb {
-    text-align: center;
-    width: 100%;
-    top: 0;
-    left: 0;
-    font-size: 0;
-    /* 1depth */ }
-    #header .inner .menuWeb ul#gnb {
-      padding-left: 80px;
-      display: inline-block; }
-      #header .inner .menuWeb ul#gnb::after {
-        content: '';
-        display: block;
-        clear: both; }
-      #header .inner .menuWeb ul#gnb > li {
-        position: relative;
-        float: left;
-        width: calc(100% / 6);
-        height: 80px;
-        padding: 10px 30px; }
-        #header .inner .menuWeb ul#gnb > li > a {
-          display: block;
-          width: 100%;
-          height: 100%;
-          font: bold 14px/1 'arial';
-          color: #222;
-          text-align: center;
-          line-height: 40px; }
-          #header .inner .menuWeb ul#gnb > li > a::before {
-            content: '';
-            position: absolute;
-            bottom: 0;
-            left: 50%;
-            transform: translateX(-50%);
-            width: 0;
-            height: 10px;
-            background-color: #d60035;
-            transition: width .8s; }
-        #header .inner .menuWeb ul#gnb > li:hover > a, #header .inner .menuWeb ul#gnb > li.on > a {
-          color: #d60035; }
-        #header .inner .menuWeb ul#gnb > li:hover a::before, #header .inner .menuWeb ul#gnb > li.on a::before {
-          width: 100%; }
-        #header .inner .menuWeb ul#gnb > li .sub {
-          position: absolute;
-          width: 1180px;
-          height: 200px;
-          background: #f3f0f0;
-          left: 50%;
-          transform: translateX(-50%);
-          top: 80px;
-          display: none;
-          border: 1px solid red; }
-        #header .inner .menuWeb ul#gnb > li:nth-of-type(2) .sub {
-          height: 250px; }
-        #header .inner .menuWeb ul#gnb > li:nth-of-type(4) .sub {
-          height: 300px; }
-  #header .inner #util {
-    position: absolute;
-    top: 50%;
-    transform: translateY(-100%);
-    right: 0; }
-    #header .inner #util li {
-      float: left;
-      margin: 0 10px; }
-      #header .inner #util li:last-of-type {
-        margin: 0 0 0 10px; }
-      #header .inner #util li a {
-        font: 12px/1 'arial';
-        color: #222;
-        letter-spacing: 1px; }
-        #header .inner #util li a svg {
-          font-size: 20px; }
-
 /* section */
 #section {
   width: 100%;
@@ -1452,79 +1376,6 @@ input, a, button {
       color: #0a0a0a;
       letter-spacing: .15em;
       text-align: center; }
-
-/* footer */
-#footer .upper {
-  position: relative;
-  padding: 60px 40px;
-  background: #19191a;
-  color: #fff; }
-  #footer .upper .inner {
-    width: 1180px;
-    margin: 0 auto; }
-    #footer .upper .inner::after {
-      content: '';
-      display: block;
-      clear: both; }
-    #footer .upper .inner article {
-      float: left;
-      width: calc(100% / 3); }
-      #footer .upper .inner article h2 {
-        font: 500 18px/30px 'Noto Sans KR';
-        margin-bottom: 20px; }
-      #footer .upper .inner article h2.logo {
-        font: 24px/1 'Poppins';
-        margin-bottom: 20px; }
-      #footer .upper .inner article div {
-        margin-bottom: 15px; }
-        #footer .upper .inner article div p {
-          font: normal 13px/30px 'Noto Sans KR';
-          color: #929191; }
-      #footer .upper .inner article ul li {
-        float: left;
-        margin-right: 30px; }
-        #footer .upper .inner article ul li a svg {
-          color: #929191;
-          font-size: 25px;
-          transition: all 0.5s; }
-        #footer .upper .inner article ul li a:hover svg {
-          animation: bounce 1.5s ease; }
-      #footer .upper .inner article:last-of-type p {
-        margin-bottom: 10px; }
-        #footer .upper .inner article:last-of-type p a {
-          position: relative;
-          display: inline-block;
-          font: normal 13px/30px 'Noto Sans KR';
-          color: #929191;
-          letter-spacing: 1px; }
-          #footer .upper .inner article:last-of-type p a:hover {
-            color: #fff; }
-          #footer .upper .inner article:last-of-type p a::after {
-            content: '';
-            display: block;
-            position: absolute;
-            width: 100%;
-            left: 0px;
-            bottom: 0;
-            width: 100%;
-            height: 1px;
-            background: #929191; }
-          #footer .upper .inner article:last-of-type p a svg {
-            margin-left: 10px; }
-        #footer .upper .inner article:last-of-type p:last-of-type {
-          margin-bottom: 0; }
-#footer .lower {
-  position: relative;
-  width: 100%;
-  background: #000000; }
-  #footer .lower .inner {
-    width: 1180px;
-    margin: 0 auto;
-    padding: 15px 0;
-    text-align: center; }
-    #footer .lower .inner p {
-      font: 11px/1 'Noto Sans KR';
-      color: #929191; }
 
 /* animation */
 @keyframes bounce {
