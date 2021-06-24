@@ -39,7 +39,7 @@
             this.createPop(vidID);
         }.bind(this));
     
-        $("body").on("click", ".pop .close", function(e){
+        $("body").on("click", ".youtube_pop .close", function(e){
             e.preventDefault();
             this.removePop();
         }.bind(this));
@@ -97,7 +97,7 @@
     Youtube.prototype.createPop= function(vidID){
         $("body")
             .append(
-                $("<aside class='pop'>")
+                $("<aside class='youtube_pop'>")
                     .css({
                         width: "100%", height: "100%",
                         position: "fixed", top: 0, left: 0,
@@ -145,14 +145,14 @@
             );// pop append ends
     
             setTimeout(function(){
-                $(".pop .con").fadeIn(500, function(){
-                    $(".pop > img").remove();
+                $(".youtube_pop .con").fadeIn(500, function(){
+                    $(".youtube_pop > img").remove();
                 })
             },2000);
     
     }
     Youtube.prototype.removePop= function(){
-        $(".pop").fadeOut(500,function(){
+        $(".youtube_pop").fadeOut(500,function(){
             $(this).remove();
         })
     } 

@@ -92,7 +92,7 @@ $aColor : #222;
                             z-index: 3;
 
                             > li{
-                                a{
+                                > a{
                                     display:block; width:200px; height:50px; 
                                     font:12px/50px 'arial'; color:#bbb; 
                                     text-align:center; background:#777; transition:0.5s; 
@@ -135,8 +135,8 @@ $aColor : #222;
     width: 100%; padding: 50px 0 100px;
     .inner {
         width: 1180px; margin: 0 auto;
-        span {font: bold 14px/1 'Manrope'; color: #0c1a31; padding: 50px 0 10px; text-align: center; display: block; letter-spacing: 2px;}
-        h1 {font: bold 36px/1 'Malgun Gothic'; color: #0c1a31; padding: 0 0 50px; text-align: center;}
+        > span {font: bold 14px/1 'Manrope'; color: #0c1a31; padding: 50px 0 10px; text-align: center; display: block; letter-spacing: 2px;}
+        > h1 {font: bold 36px/1 'Malgun Gothic'; color: #0c1a31; padding: 0 0 50px; text-align: center;}
 
         .box_menu {
             width: 1000px; margin: 0 auto;

@@ -22,13 +22,11 @@
             display: block;
             width: 30%;
             height: 150px;
-            float: left;
             background-size: cover;
             background-position: center;
+            border-radius: 5%;
         }
         .con {
-            width: 70%;
-            float: right;
             box-sizing: border-box;
             padding-left: 20px;
 
@@ -45,6 +43,7 @@
             span {
                 font: 12px/1 "arial";
                 color: orange;
+                text-align: center;
             }
         }
     }
