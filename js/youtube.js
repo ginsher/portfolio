@@ -1,7 +1,7 @@
 (function($){
     //디폴트 옵션값
     $.defaults = {      
-        count :8
+        count :20
     }
 
     //제이쿼리 객체에 플러그인 등록 코드
@@ -73,7 +73,7 @@
             var vidId = data.snippet.resourceId.videoId;
     
             if(txt.length>200) {
-                txt= txt.substr(0,200)+"...";
+                txt= txt.substr(0,150)+"...";
             }   
     
             this.frame
