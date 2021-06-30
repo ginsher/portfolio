@@ -32,6 +32,9 @@ fieldset {
 input, a, button {
   outline: 1; }
 
+body {
+  overflow-x: hidden; }
+
 .hidden {
   position: absolute;
   top: -9999px;
@@ -56,6 +59,9 @@ fieldset {
 
 input, a, button {
   outline: 1; }
+
+body {
+  overflow-x: hidden; }
 
 .hidden {
   position: absolute;
@@ -88,122 +94,87 @@ input, a, button {
       top: 0; }
 
 /* header */
-#header::after {
-  content: '';
-  display: block;
-  clear: both; }
-#header .inner {
-  position: relative;
-  width: 1180px;
-  margin: 0 auto; }
-  #header .inner .logo {
-    width: 100%;
-    position: absolute;
-    left: 0; }
-    #header .inner .logo::after {
-      display: block;
-      content: '';
+#header {
+  width: 100%; }
+  #header .inner {
+    width: 1180px;
+    margin: 0px auto;
+    box-sizing: border-box;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-content: flex-end;
+    position: relative; }
+    #header .inner::before {
+      content: "";
       width: 100%;
       height: 10px;
-      background: black;
+      background: #222;
       position: absolute;
-      bottom: -16px; }
-    #header .inner .logo a {
-      display: inline-block; }
-      #header .inner .logo a > h1 {
-        color: #222; }
-      #header .inner .logo a > span {
-        bottom: 0;
-        color: #222; }
-  #header .inner .menuWeb {
-    text-align: center;
-    width: 100%;
-    top: 0;
-    left: 0;
-    font-size: 0;
-    /* 1depth */ }
-    #header .inner .menuWeb ul#gnb {
-      padding-left: 80px;
-      display: inline-block; }
-      #header .inner .menuWeb ul#gnb::after {
-        content: '';
-        display: block;
-        clear: both; }
-      #header .inner .menuWeb ul#gnb > li {
-        position: relative;
-        float: left;
-        width: calc(100% / 6);
-        height: 80px;
-        padding: 10px 30px; }
-        #header .inner .menuWeb ul#gnb > li > a {
-          display: block;
-          width: 100%;
-          height: 100%;
-          font: bold 14px/1 'arial';
-          color: #222;
-          text-align: center;
-          line-height: 40px; }
-          #header .inner .menuWeb ul#gnb > li > a::before {
-            content: '';
-            position: absolute;
-            bottom: 0;
-            left: 50%;
-            transform: translateX(-50%);
-            width: 0;
-            height: 10px;
-            background-color: #d60035;
-            transition: width .8s; }
-        #header .inner .menuWeb ul#gnb > li:hover > a, #header .inner .menuWeb ul#gnb > li.on > a {
-          color: #d60035; }
-        #header .inner .menuWeb ul#gnb > li:hover a::before, #header .inner .menuWeb ul#gnb > li.on a::before {
-          width: 100%; }
-        #header .inner .menuWeb ul#gnb > li .sub {
-          position: absolute;
-          width: 1180px;
-          height: 200px;
-          background: #f3f0f0;
-          left: 50%;
-          transform: translateX(-50%);
-          top: 80px;
-          display: none;
-          border: 1px solid red;
-          /* 2depth */ }
-          #header .inner .menuWeb ul#gnb > li .sub > ul#lnb {
-            position: absolute;
-            top: 50px;
-            z-index: 3; }
-            #header .inner .menuWeb ul#gnb > li .sub > ul#lnb > li > a {
-              display: block;
-              width: 200px;
-              height: 50px;
-              font: 12px/50px 'arial';
-              color: #bbb;
-              text-align: center;
-              background: #777;
-              transition: 0.5s; }
-              #header .inner .menuWeb ul#gnb > li .sub > ul#lnb > li > a:hover {
-                background: #555;
-                color: orange; }
-        #header .inner .menuWeb ul#gnb > li:nth-of-type(2) .sub {
-          height: 250px; }
-        #header .inner .menuWeb ul#gnb > li:nth-of-type(4) .sub {
-          height: 300px; }
-  #header .inner #util {
-    position: absolute;
-    top: 50%;
-    transform: translateY(-100%);
-    right: 0; }
-    #header .inner #util li {
-      float: left;
-      margin: 0 10px; }
-      #header .inner #util li:last-of-type {
-        margin: 0 0 0 10px; }
-      #header .inner #util li a {
-        font: 12px/1 'arial';
+      bottom: 0px;
+      left: 0px; }
+    #header .inner h1 {
+      width: 200px;
+      height: 90px;
+      font-size: 0;
+      display: inline-flex;
+      justify-content: flex-start;
+      align-content: center;
+      flex-wrap: wrap; }
+      #header .inner h1 a {
+        font: bold 28px/1 'Malgun Gothic';
         color: #222;
+        width: 100%;
+        text-align: center; }
+      #header .inner h1 span {
+        font: 12px/1 "arial";
+        color: #444;
+        width: 100%;
+        text-align: center;
         letter-spacing: 1px; }
-        #header .inner #util li a svg {
-          font-size: 20px; }
+    #header .inner #gnb {
+      display: inline-flex; }
+      #header .inner #gnb > li > a {
+        display: flex;
+        height: 80px;
+        padding: 0px 20px;
+        box-sizing: border-box;
+        align-items: center;
+        position: relative;
+        font: bold 15px/1 "arial";
+        color: #444; }
+        #header .inner #gnb > li > a::after {
+          content: "";
+          display: block;
+          width: 0%;
+          height: 10px;
+          background: #D60035;
+          position: absolute;
+          bottom: -10px;
+          left: 50%;
+          transition: 0.5s; }
+        #header .inner #gnb > li > a:hover {
+          font-weight: bold;
+          color: #D60035; }
+          #header .inner #gnb > li > a:hover::after {
+            width: 100%;
+            left: 0%; }
+      #header .inner #gnb > li .sub {
+        width: 100%;
+        height: 200px;
+        border: 1px solid #222;
+        position: absolute;
+        top: 90px;
+        left: 0px;
+        background: #fff;
+        display: none; }
+    #header .inner .util {
+      display: inline-flex;
+      align-content: center;
+      flex-wrap: wrap; }
+      #header .inner .util li a {
+        color: #666;
+        margin-left: 20px; }
 
 /* section */
 #section {
@@ -469,6 +440,9 @@ fieldset {
 input, a, button {
   outline: 1; }
 
+body {
+  overflow-x: hidden; }
+
 .hidden {
   position: absolute;
   top: -9999px;
@@ -711,6 +685,9 @@ fieldset {
 input, a, button {
   outline: 1; }
 
+body {
+  overflow-x: hidden; }
+
 .hidden {
   position: absolute;
   top: -9999px;
@@ -859,6 +836,9 @@ fieldset {
 input, a, button {
   outline: 1; }
 
+body {
+  overflow-x: hidden; }
+
 .hidden {
   position: absolute;
   top: -9999px;
@@ -926,6 +906,9 @@ fieldset {
 
 input, a, button {
   outline: 1; }
+
+body {
+  overflow-x: hidden; }
 
 .hidden {
   position: absolute;
