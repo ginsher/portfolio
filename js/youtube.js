@@ -73,7 +73,7 @@
             var vidId = data.snippet.resourceId.videoId;
     
             if(txt.length>200) {
-                txt= txt.substr(0,150)+"...";
+                txt= txt.substr(0,100)+"...";
             }   
     
             this.frame
