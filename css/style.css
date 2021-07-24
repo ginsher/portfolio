@@ -172,6 +172,17 @@ body {
         left: 0px;
         background: #fff;
         display: none; }
+        #header .inner #gnb > li .sub h2 {
+          float: left;
+          border: 1px solid yellowgreen; }
+        #header .inner #gnb > li .sub ul {
+          border: 1px solid red; }
+          #header .inner #gnb > li .sub ul::after {
+            content: "";
+            display: block;
+            clear: both; }
+          #header .inner #gnb > li .sub ul li {
+            float: left; }
     #header .inner .util {
       display: inline-flex;
       align-content: center;
@@ -509,6 +520,17 @@ body {
         left: 0px;
         background: #fff;
         display: none; }
+        #header .inner #gnb > li .sub h2 {
+          float: left;
+          border: 1px solid yellowgreen; }
+        #header .inner #gnb > li .sub ul {
+          border: 1px solid red; }
+          #header .inner #gnb > li .sub ul::after {
+            content: "";
+            display: block;
+            clear: both; }
+          #header .inner #gnb > li .sub ul li {
+            float: left; }
     #header .inner .util {
       display: inline-flex;
       align-content: center;
