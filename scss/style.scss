@@ -63,7 +63,7 @@ $aColor : #222;
 }
 
 /*---------------------------------------- tablet  ----------------------------------------*/
-@media screen and (max-width:1179px){
+@mixin tablet {
     /* header */
     #sub_header {
         .inner {
@@ -109,4 +109,4 @@ $aColor : #222;
 }
 
 /*---------------------------------------- mobile  ----------------------------------------*/
-@media screen and (max-width:539px){}
+@mixin mobile {}

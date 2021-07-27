@@ -1,5 +1,6 @@
 @charset 'utf-8';
-@import "reset";
+
+@import "mixin", "reset"; 
 
 .loading {
     position: fixed;
@@ -143,7 +144,7 @@
     }
 }
 
-@media screen and (max-width: 1179px){
+@mixin tablet {
     .content {   
         padding: 100px 40px; 
     
