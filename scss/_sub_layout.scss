@@ -1,5 +1,5 @@
 @charset "utf-8";
-@import "reset";
+@import  "mixin", "reset";
 
 /* all - font-family: 'Noto Sans KR' */
 @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100;300;400;500;700;900&display=swap');
@@ -171,8 +171,9 @@ $aColor : #222;
                 }
                 
                 ul {
+                    text-align: left;
                     li {
-                        float: left; margin-right: 30px;
+                        display: inline-block; margin-right: 30px;
                         a { 
                             svg {color: #929191; font-size: 25px; transition: all 0.5s;}
                             &:hover svg {animation: bounce 1.5s ease;}
@@ -199,7 +200,7 @@ $aColor : #222;
         }
     }
     .lower { position: relative; width: 100%;
-        background: #000000;
+        background: black;
         .inner {
             width: 1180px; margin: 0 auto; padding: 15px 0; text-align: center;
             p {font:11px/1 'Noto Sans KR'; color: #929191;}
@@ -218,9 +219,9 @@ $aColor : #222;
 }
 
 /*---------------------------------------- tablet  ----------------------------------------*/
-@media screen and (max-width:1179px){
+@include tablet {
     /* header */
-    #sub_header {
+    #header {
         .inner {
             width: 100%;
         }
@@ -249,13 +250,30 @@ $aColor : #222;
     }
     
     /* footer */
-    #sub_footer {
+    #footer {
         .upper {
             .inner {
                 width: 100%;
+                article {
+                    float: left; width: calc(100% / 2);
+
+                    ul {
+                        text-align: left;
+                        li {
+                            display: inline-block; margin-right: 30px;
+                            a { 
+                                svg {color: #929191; font-size: 25px; transition: all 0.5s;}
+                                &:hover svg {animation: bounce 1.5s ease;}
+                            }
+                        }
+                    }
+                    &:last-of-type {
+                        margin-top: 20px;
+                    }
+                } //article
             }
         }
-        .lower {
+        .lower { width: 100%;
             .inner {
                 width: 100%;
             }
@@ -263,5 +281,78 @@ $aColor : #222;
     }
 }
 
+
+@media screen and (max-width:800px){
+    #footer {
+        .upper{
+            .inner{
+                article {
+                    ul {
+                        text-align: left;
+                        li {
+                            width: calc(100%/5);
+                            display: inline-block; margin-right: 30px;
+
+                            &:nth-of-type(n+4):nth-of-type(-n+6){
+                                margin-top: 20px;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+@media screen and (max-width:610px){
+    #footer {
+        .upper{
+            .inner{
+                article {
+                    ul {
+                        text-align: left;
+                        li {
+                            width: calc(100%/4);
+                            display: inline-block; margin-right: 0px;
+
+                            &:nth-of-type(n+4):nth-of-type(-n+6){
+                                margin-top: 20px;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+
+
+
 /*---------------------------------------- mobile  ----------------------------------------*/
-@media screen and (max-width:539px){}
+@include mobile {
+    #footer{
+        .upper {
+            padding: 40px 20px;
+            .inner {
+                article {
+                    float: left; width: calc(100% / 1);
+                    text-align: center;
+
+                    ul {
+                        text-align: center;
+                    }
+                    &:first-of-type{
+                        div {
+                            &:first-of-type{
+                                p {display: none;}
+                            }
+                        }
+                    }
+                } //article
+            }
+        }
+        .lower { width: 100%;
+        }  
+    }
+}
